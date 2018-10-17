@@ -1,0 +1,10 @@
+C:\Users\Nico\Documents\GitHub\Softwaredesign\bin\Debug\netcoreapp2.0\Softwaredesign.deps.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\bin\Debug\netcoreapp2.0\Softwaredesign.runtimeconfig.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\bin\Debug\netcoreapp2.0\Softwaredesign.runtimeconfig.dev.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\bin\Debug\netcoreapp2.0\Softwaredesign.dll
+C:\Users\Nico\Documents\GitHub\Softwaredesign\bin\Debug\netcoreapp2.0\Softwaredesign.pdb
+C:\Users\Nico\Documents\GitHub\Softwaredesign\obj\Debug\netcoreapp2.0\Softwaredesign.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Documents\GitHub\Softwaredesign\obj\Debug\netcoreapp2.0\Softwaredesign.AssemblyInfoInputs.cache
+C:\Users\Nico\Documents\GitHub\Softwaredesign\obj\Debug\netcoreapp2.0\Softwaredesign.AssemblyInfo.cs
+C:\Users\Nico\Documents\GitHub\Softwaredesign\obj\Debug\netcoreapp2.0\Softwaredesign.dll
+C:\Users\Nico\Documents\GitHub\Softwaredesign\obj\Debug\netcoreapp2.0\Softwaredesign.pdb
