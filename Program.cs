@@ -6,7 +6,8 @@ namespace Softwaredesign
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("dotnet run, dotnet build, ");
+            Console.WriteLine(args[0]);
         }
     }
 }
