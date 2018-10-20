@@ -22,16 +22,16 @@ namespace Softwaredesign
             String numberString = number.ToString();
             if (numberString.Length == 1){
                 units = Program.calculateUnits(numberString[0]);
-                Console.WriteLine(_number + " umgerechnet ist : " + units);
+                Console.WriteLine(_number[0] + " umgerechnet ist : " + units);
             }else if(numberString.Length == 2){
                 units = Program.calculateUnits(numberString[1]);
                 tens = Program.calculateTens(numberString[0]);
-                Console.WriteLine(_number + " umgerechnet ist : " + tens + units);
+                Console.WriteLine(_number[0] + " umgerechnet ist : " + tens + units);
             }else if(numberString.Length == 3){
                 units = Program.calculateUnits(numberString[2]);
                 tens = Program.calculateTens(numberString[1]);
                 hundreds = Program.calculateHundreds(numberString[0]);
-                Console.WriteLine(_number + " umgerechnet ist : "+ hundreds + tens + units);
+                Console.WriteLine(_number[0] + " umgerechnet ist : "+ hundreds + tens + units);
             }
             
         }

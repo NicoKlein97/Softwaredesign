@@ -18,16 +18,16 @@ namespace Aufgabe1
             
             if (_numberLength == 1){
                 units = RomanNumber.calculateUnits(_number[0][0]);
-                Console.WriteLine("_number" + " umgerechnet ist : " + units);
+                Console.WriteLine(_number[0] + " umgerechnet ist : " + units);
             }else if(_numberLength == 2){
                 units = RomanNumber.calculateUnits(_number[0][1]);
                 tens = RomanNumber.calculateTens(_number[0][0]);
-                Console.WriteLine("_number" + " umgerechnet ist : " + tens + units);
+                Console.WriteLine(_number[0] + " umgerechnet ist : " + tens + units);
             }else if(_numberLength == 3){
                 units = RomanNumber.calculateUnits(_number[0][2]);
                 tens = RomanNumber.calculateTens(_number[0][1]);
                 hundreds = RomanNumber.calculateHundreds(_number[0][0]);
-                Console.WriteLine("_number" + " umgerechnet ist : "+ hundreds + tens + units);
+                Console.WriteLine(_number[0] + " umgerechnet ist : "+ hundreds + tens + units);
             }else{
                 Console.WriteLine("Ihre Zahl darf maximal drei Stellen besitzen");
             }
