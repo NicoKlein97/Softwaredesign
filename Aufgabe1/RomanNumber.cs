@@ -6,12 +6,7 @@ namespace Aufgabe1
     {
         static void Main(string[] args)
         {
-            //if(GetType(args) != "int"){
-           //     Console.Write("Fehler");
-          //      }else{
-         //           RomanNumber.GetRomanNumber(args);
-        //        }
-                Console.WriteLine("test + " + args);
+      
                 RomanNumber.GetRomanNumber(args);
         }
 
