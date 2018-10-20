@@ -63,7 +63,10 @@ namespace Aufgabe1
                     break;
                 case '9':
                     romanNumber = "IX"; 
-                    break;  
+                    break;
+                case '0':
+                    romanNumber = "";
+                    break;      
                 default:
                          Console.WriteLine("Bitte geben Sie eine ganze Zahl ein");
                         break;
@@ -102,6 +105,9 @@ namespace Aufgabe1
                 case '9':
                     romanNumber = "XC"; 
                     break;  
+                case '0':
+                    romanNumber = "";
+                    break;      
                 default:
                          Console.WriteLine("Bitte geben Sie eine ganze Zahl ein");
                         break;
@@ -138,7 +144,10 @@ namespace Aufgabe1
                     break;
                 case '9':
                     romanNumber = "CM"; 
-                    break;  
+                    break;
+                case '0':
+                    romanNumber = "";
+                    break;        
                 default:
                          Console.WriteLine("Bitte geben Sie eine ganze Zahl ein");
                         break;
