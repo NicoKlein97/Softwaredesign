@@ -11,8 +11,7 @@ namespace Aufgabe2
       public int Personalnummer;  
   }
         static void Main(string[] args)
-        {
-
+        { 
             int i = 42;
             double pi = 3.1415;
             string salute = "Hello, World";
