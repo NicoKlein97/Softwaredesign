@@ -1,0 +1,10 @@
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe4\bin\Debug\netcoreapp2.0\Aufgabe4.deps.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe4\bin\Debug\netcoreapp2.0\Aufgabe4.runtimeconfig.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe4\bin\Debug\netcoreapp2.0\Aufgabe4.runtimeconfig.dev.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe4\bin\Debug\netcoreapp2.0\Aufgabe4.dll
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe4\bin\Debug\netcoreapp2.0\Aufgabe4.pdb
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe4\obj\Debug\netcoreapp2.0\Aufgabe4.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe4\obj\Debug\netcoreapp2.0\Aufgabe4.AssemblyInfoInputs.cache
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe4\obj\Debug\netcoreapp2.0\Aufgabe4.AssemblyInfo.cs
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe4\obj\Debug\netcoreapp2.0\Aufgabe4.dll
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe4\obj\Debug\netcoreapp2.0\Aufgabe4.pdb
