@@ -24,6 +24,7 @@ namespace Aufgabe5
             }
             string reversedString = string.Join("", characters.ToArray());
             return reversedString;
+            //test
         }
     }
 }
