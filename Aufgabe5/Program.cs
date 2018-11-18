@@ -46,14 +46,14 @@ namespace Aufgabe5
             string turnWord = "";
             string[] finalText = new string[wordText.Length];
 
-            for(int i = 0; i< wordText.Length; i++){ // hier musste -1 entfernt werden
+            for(int i = 0; i< wordText.Length; i++){ 
                 turnWord += wordText[i];
                 string wordIsTurned = "";
                 Console.WriteLine("i " + turnWord);
 
                 for (int k = turnWord.Length - 1; k >= 0; k--)
                 {
-                    wordIsTurned += turnWord[k]; // Inhalt der inneren for-Scheife war aus dem Diagramm nicht ersichtlich
+                    wordIsTurned += turnWord[k]; 
                 }
 
                 turnWord = "";
