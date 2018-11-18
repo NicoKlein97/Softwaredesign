@@ -55,7 +55,6 @@ namespace Test
             string sentenceReversed = reverseLetters(wordsReversed);
 
             return sentenceReversed;
-
         }
     }
 }
