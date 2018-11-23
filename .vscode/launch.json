@@ -9,11 +9,12 @@
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/Aufgabe4/bin/Debug/netcoreapp2.0/Aufgabe4.dll",
+            "program": "${workspaceFolder}/Aufgabe6/bin/Debug/netcoreapp2.0/Aufgabe6.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopAtEntry": false,
+            "requireExactSource": false,
             "internalConsoleOptions": "openOnSessionStart"
         }
     ]
