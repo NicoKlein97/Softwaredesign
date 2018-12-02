@@ -6,6 +6,7 @@ namespace Aufgabe6
     {
         public string question;
         public Answer[] answers;
+
         public void IsAnswerCorrect(int choice, Player _player){
 
             if(answers[choice - 1].truth == true){
@@ -15,7 +16,6 @@ namespace Aufgabe6
                 Console.WriteLine("Ihre Antwort ist falsch");
                 _player.calculateScore(false);
             }
-
         }
        public void show(){
             Console.WriteLine(question);
@@ -25,6 +25,4 @@ namespace Aufgabe6
             }
         }
     }
-
-    
 }

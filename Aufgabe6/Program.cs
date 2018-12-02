@@ -5,6 +5,7 @@ namespace Aufgabe6
 {
     class Program
     {
+        //Eigene Klase oder Methode für Ausgaben
         public static List<Quizelement> listWithAllQuestionsAndAnswers = new List<Quizelement>();
         public static Player player = new Player();
 
@@ -38,7 +39,7 @@ namespace Aufgabe6
                     game();
                     break;
                 default:
-                    Console.WriteLine("Alright. You finished with a score of " + player.score +  " points, I hope I'll see you again soon");
+                    Console.WriteLine("Alright. You finished with a score of " + player.score + " points, I hope I'll see you again soon");
                     break;
             }
 
@@ -46,7 +47,6 @@ namespace Aufgabe6
 
         public static Quizelement CreationOfQuestionAndAnswers()
         {
-
             Quizelement quiz = new Quizelement();
             quiz.question = "Wer war der erste Bundeskanzler der BRD ?";
             quiz.answers = new Answer[4];
@@ -78,7 +78,6 @@ namespace Aufgabe6
             Quizelement questionToDisplay = GetRandomQuestion(listWithAllQuestionsAndAnswers);
 
             return questionToDisplay;
-
         }
 
         public static Quizelement GetRandomQuestion(List<Quizelement> _listWithAllQuestionsAndAnswers)
@@ -97,7 +96,7 @@ namespace Aufgabe6
 
             Console.WriteLine("Please write down your question");
             string newQuestion = Console.ReadLine();
-             newQuiz.question = newQuestion;
+            newQuiz.question = newQuestion;
 
             Console.WriteLine("How many answers would you like to add ?");
             int amountOfAnswers = Int32.Parse(Console.ReadLine());
