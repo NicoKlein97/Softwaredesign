@@ -35,50 +35,6 @@ namespace Aufgabe7
             }
         }
 
-        public static void LoadQuizElement()
-        {
-            QuizSingle quiz = new QuizSingle();
-            quiz.question = "Wie heißt der Hauptcharacter aus God Of War ?";
-            quiz.callToAction = "Wähle eine der Antworten aus";
-            quiz.options = new QuizOption[4];
-            quiz.options[0] = new QuizOption { text = "Dante", correct = false };
-            quiz.options[1] = new QuizOption { text = "Zeus", correct = false };
-            quiz.options[2] = new QuizOption { text = "Kratos", correct = true };
-            quiz.options[3] = new QuizOption { text = "Ares", correct = false };
-
-            QuizMultiple quiz2 = new QuizMultiple();
-            quiz2.question = "Welche Charaktere sind Teil des Zelda Universums ?";
-            quiz2.callToAction = "Wähle ALLE richtigen Antworten aus";
-            quiz2.options = new QuizOption[6];
-            quiz2.options[0] = new QuizOption { text = "Link", correct = true };
-            quiz2.options[1] = new QuizOption { text = "Epona", correct = true };
-            quiz2.options[2] = new QuizOption { text = "Kratos", correct = false };
-            quiz2.options[3] = new QuizOption { text = "König Hyrule", correct = true };
-            quiz2.options[4] = new QuizOption { text = "Joker", correct = false };
-            quiz2.options[5] = new QuizOption { text = "Aloy", correct = false };
-
-            QuizFree quiz3 = new QuizFree();
-            quiz3.question = "Was hat den Award 'Spiel des Jahres' bei den The Videogames Awards 2018 gewonnen ?";
-            quiz3.correctAnswer = "god of war";
-
-            QuizGuess quiz4 = new QuizGuess();
-            quiz4.question = "Wie viele Millionen Einwohner hat Deutschland ?";
-            quiz4.callToAction = "Gib Zahl ein";
-            quiz4.correctAnswer = 82;
-            quiz4.tolerance = 2;
-
-            QuizBinary quiz5 = new QuizBinary();
-            quiz5.question = " 5 + 5 = 13";
-            quiz5.callToAction = "Ist die Antwort richtig ?";
-            quiz5.correctAnswer = false;
-
-            quizElements.Add(quiz);
-            quizElements.Add(quiz2);
-            quizElements.Add(quiz3);
-            quizElements.Add(quiz4);
-            quizElements.Add(quiz5);
-        }
-
         public static bool PlayQuizElement()
         {
             Random rnd = new Random();
@@ -149,6 +105,49 @@ namespace Aufgabe7
                         quizElements.Add(quizUserFree);
                         break;        
                 }
+        }
+        public static void LoadQuizElement()
+        {
+            QuizSingle quiz = new QuizSingle();
+            quiz.question = "Wie heißt der Hauptcharacter aus God Of War ?";
+            quiz.callToAction = "Wähle eine der Antworten aus";
+            quiz.options = new QuizOption[4];
+            quiz.options[0] = new QuizOption { text = "Dante", correct = false };
+            quiz.options[1] = new QuizOption { text = "Zeus", correct = false };
+            quiz.options[2] = new QuizOption { text = "Kratos", correct = true };
+            quiz.options[3] = new QuizOption { text = "Ares", correct = false };
+
+            QuizMultiple quiz2 = new QuizMultiple();
+            quiz2.question = "Welche Charaktere sind Teil des Zelda Universums ?";
+            quiz2.callToAction = "Wähle ALLE richtigen Antworten aus";
+            quiz2.options = new QuizOption[6];
+            quiz2.options[0] = new QuizOption { text = "Link", correct = true };
+            quiz2.options[1] = new QuizOption { text = "Epona", correct = true };
+            quiz2.options[2] = new QuizOption { text = "Kratos", correct = false };
+            quiz2.options[3] = new QuizOption { text = "König Hyrule", correct = true };
+            quiz2.options[4] = new QuizOption { text = "Joker", correct = false };
+            quiz2.options[5] = new QuizOption { text = "Aloy", correct = false };
+
+            QuizFree quiz3 = new QuizFree();
+            quiz3.question = "Was hat den Award 'Spiel des Jahres' bei den The Videogames Awards 2018 gewonnen ?";
+            quiz3.correctAnswer = "god of war";
+
+            QuizGuess quiz4 = new QuizGuess();
+            quiz4.question = "Wie viele Millionen Einwohner hat Deutschland ?";
+            quiz4.callToAction = "Gib Zahl ein";
+            quiz4.correctAnswer = 82;
+            quiz4.tolerance = 2;
+
+            QuizBinary quiz5 = new QuizBinary();
+            quiz5.question = " 5 + 5 = 13";
+            quiz5.callToAction = "Ist die Antwort richtig ?";
+            quiz5.correctAnswer = false;
+
+            quizElements.Add(quiz);
+            quizElements.Add(quiz2);
+            quizElements.Add(quiz3);
+            quizElements.Add(quiz4);
+            quizElements.Add(quiz5);
         }
     }
 }
