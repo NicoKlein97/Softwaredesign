@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Aufgabe7
 {
@@ -83,6 +84,11 @@ namespace Aufgabe7
                         QuizSingle quizUserSingle = new QuizSingle();
                         quizUserSingle.SetupByUserInput();
                         quizElements.Add(quizUserSingle);
+                        string json = JsonConvert.SerializeObject(quizUserSingle);
+                        Console.WriteLine(json);
+                        QuizSingle m = JsonConvert.DeserializeObject<QuizSingle>(json);
+                        string name = m.options[0].text;
+                        Console.WriteLine("optionen = " + name);
                         break;
                     case "multiple":
                         QuizMultiple quizUserMultiple = new QuizMultiple();
