@@ -5,6 +5,7 @@ namespace Aufgabe7
 {
     class QuizMultiple: QuizSingle
     {
+        public string type = "multiple";
         public void ShowOptions(){
             
         }

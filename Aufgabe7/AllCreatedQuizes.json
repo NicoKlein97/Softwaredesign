@@ -1,0 +1,34 @@
+[
+  {
+    "options": [
+      {
+        "text": "Uncharted",
+        "correct": true
+      },
+      {
+        "text": "God of War",
+        "correct": false
+      },
+      {
+        "text": "Nier Automata",
+        "correct": false
+      }
+    ],
+    "type": "single",
+    "question": "Von welchen Spiel is Nathan Drake der Held ?",
+    "callToAction": null
+  },
+  {
+    "correctAnswer": 82,
+    "tolerance": 3.0,
+    "type": "guess",
+    "question": "Wie viele Millionen Einwohner hat Deutschland ?",
+    "callToAction": null
+  },
+  {
+    "correctAnswer": "God of War",
+    "type": "free",
+    "question": "Welches Spiel wurde Spiel des Jahres bei den Game Awards 2018 ?",
+    "callToAction": null
+  }
+]

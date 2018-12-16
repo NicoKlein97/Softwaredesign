@@ -6,6 +6,7 @@ namespace Aufgabe7
     {
         public int correctAnswer;
         public float tolerance;
+        public string type = "guess";
         
         public override bool CheckAnswer(string _answer){
             int answerInInt = Int32.Parse(_answer);

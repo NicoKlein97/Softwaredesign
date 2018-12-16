@@ -6,6 +6,7 @@ namespace Aufgabe7
     class QuizSingle : QuizElement
     {
         public QuizOption[] options;
+        public string type = "single";
 
         public override void ShowOptions()
         {

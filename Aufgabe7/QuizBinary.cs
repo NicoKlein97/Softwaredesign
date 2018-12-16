@@ -5,7 +5,7 @@ namespace Aufgabe7
     class QuizBinary: QuizElement
     {
         public bool correctAnswer;
-
+        public string type = "binary";
         public override bool CheckAnswer(string _answer){
             if(_answer == "yes" && correctAnswer ==true){
                 return true;

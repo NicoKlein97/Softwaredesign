@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.IO;
+
+using System.Globalization;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
 
 namespace Aufgabe7
 {
@@ -9,6 +14,7 @@ namespace Aufgabe7
         public static int points = 0;
         public static int attempts = 0;
         public static List<QuizElement> quizElements = new List<QuizElement>();
+        public static JArray DataInJsonFile = new JArray();
         static void Main(string[] args)
         {
             LoadQuizElement();
@@ -22,6 +28,7 @@ namespace Aufgabe7
                 switch (userAction)
                 {
                     case "play":
+                        LoadJsonData();
                         bool solved = Program.PlayQuizElement();
                         Console.WriteLine(solved);
                         HandlePointsAndAttempts(solved);
@@ -39,9 +46,8 @@ namespace Aufgabe7
         public static bool PlayQuizElement()
         {
             Random rnd = new Random();
-            int r = rnd.Next(quizElements.Count);
-            QuizElement quiz = quizElements[r];
-
+            int r = rnd.Next(1, 3);
+            QuizElement quiz = DataInJsonFile[0][r].ToObject<QuizElement>();
             quiz.show();
             quiz.ShowOptions();
             string answer = Console.ReadLine();
@@ -65,52 +71,58 @@ namespace Aufgabe7
         {
             if (_wasAnswerCorrect == true)
             {
-                Program.points ++;
+                Program.points++;
             }
             else
             {
-                Program.points --;
-                Program.attempts ++;
+                Program.points--;
+                Program.attempts++;
             }
         }
 
-        public static void CreateQuizElement(){
+        public static void CreateQuizElement()
+        {
             Console.WriteLine("Welchen Typ willst du erstellen ? single, multiple, guess, free oder binary ?");
             string type = Console.ReadLine();
 
             switch (type)
-                {
-                    case "single":
-                        QuizSingle quizUserSingle = new QuizSingle();
-                        quizUserSingle.SetupByUserInput();
-                        quizElements.Add(quizUserSingle);
-                        string json = JsonConvert.SerializeObject(quizUserSingle);
-                        Console.WriteLine(json);
-                        QuizSingle m = JsonConvert.DeserializeObject<QuizSingle>(json);
-                        string name = m.options[0].text;
-                        Console.WriteLine("optionen = " + name);
-                        break;
-                    case "multiple":
-                        QuizMultiple quizUserMultiple = new QuizMultiple();
-                        quizUserMultiple.SetupByUserInput();
-                        quizElements.Add(quizUserMultiple);
-                        break;
-                    case "guess":
-                        QuizGuess quizUserGuess = new QuizGuess();
-                        quizUserGuess.SetupByUserInput();
-                        quizElements.Add(quizUserGuess);
-                        break;
-                    case "binary":
-                        QuizBinary quizUserBinary = new QuizBinary();
-                        quizUserBinary.SetupByUserInput();
-                        quizElements.Add(quizUserBinary);
-                        break;
-                    case "free":
-                        QuizFree quizUserFree = new QuizFree();
-                        quizUserFree.SetupByUserInput();
-                        quizElements.Add(quizUserFree);
-                        break;        
-                }
+            {
+                case "single":
+                    QuizSingle quizUserSingle = new QuizSingle();
+                    quizUserSingle.SetupByUserInput();
+                    quizElements.Add(quizUserSingle);
+                    JObject singleJson = JObject.FromObject(quizUserSingle);
+                    AddToJson(singleJson);
+                    break;
+                case "multiple":
+                    QuizMultiple quizUserMultiple = new QuizMultiple();
+                    quizUserMultiple.SetupByUserInput();
+                    quizElements.Add(quizUserMultiple);
+                    JObject mutipleJson = JObject.FromObject(quizUserMultiple);
+                    AddToJson(mutipleJson);
+                    break;
+                case "guess":
+                    QuizGuess quizUserGuess = new QuizGuess();
+                    quizUserGuess.SetupByUserInput();
+                    quizElements.Add(quizUserGuess);
+                    JObject guessJson = JObject.FromObject(quizUserGuess);
+                    AddToJson(guessJson);
+                    break;
+                case "binary":
+                    QuizBinary quizUserBinary = new QuizBinary();
+                    quizUserBinary.SetupByUserInput();
+                    quizElements.Add(quizUserBinary);
+                    JObject binaryJson = JObject.FromObject(quizUserBinary);
+                    AddToJson(binaryJson);
+                    break;
+                case "free":
+                    QuizFree quizUserFree = new QuizFree();
+                    quizUserFree.SetupByUserInput();
+                    quizElements.Add(quizUserFree);
+                    JObject freeJson = JObject.FromObject(quizUserFree);
+                    AddToJson(freeJson);
+                    break;
+            }
         }
         public static void LoadQuizElement()
         {
@@ -149,11 +161,48 @@ namespace Aufgabe7
             quiz5.callToAction = "Ist die Antwort richtig ?";
             quiz5.correctAnswer = false;
 
-            quizElements.Add(quiz);
-            quizElements.Add(quiz2);
+            //quizElements.Add(quiz);
+            //quizElements.Add(quiz2);
             quizElements.Add(quiz3);
-            quizElements.Add(quiz4);
-            quizElements.Add(quiz5);
+            //quizElements.Add(quiz4);
+            //quizElements.Add(quiz5);
         }
+
+        public static void AddToJson(JObject _obj)
+        {
+            JArray JsonFileInArray = LoadJsonData();
+            using (FileStream fs = new FileStream("AllCreatedQuizes.json", FileMode.Append, FileAccess.Write))
+            {
+                using (StreamWriter sw = new StreamWriter(fs))
+                {
+                    JsonFileInArray.Add(_obj);
+                    string json = JsonConvert.SerializeObject(JsonFileInArray, Formatting.Indented);
+                    sw.Close();
+                    File.Delete("AllCreatedQuizes.json");
+                    File.WriteAllText("AllCreatedQuizes.json", json);
+                }
+            }
+        }
+
+        public static JArray LoadJsonData()
+        {
+            using (StreamReader r = new StreamReader("AllCreatedQuizes.json"))
+            {
+
+                var existingJsonFile = r.ReadToEnd();
+                Console.WriteLine(DataInJsonFile);
+                DataInJsonFile.ToObject<List<Object>>();
+
+                DataInJsonFile.Add(JsonConvert.DeserializeObject(existingJsonFile));
+                r.Close();
+                return DataInJsonFile;
+            }
+        }
+
+        public static void test()
+        {
+
+        }
+
     }
 }

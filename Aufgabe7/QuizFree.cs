@@ -5,6 +5,8 @@ namespace Aufgabe7
     class QuizFree:QuizElement
     {
        public string correctAnswer;
+       public string type = "free"; 
+
        public override bool CheckAnswer(string _answer){
            Console.WriteLine("Richtige Antwort: " + correctAnswer);
            Console.WriteLine("gegebene Antwort: " + _answer);

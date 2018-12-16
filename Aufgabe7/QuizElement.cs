@@ -7,6 +7,7 @@ namespace Aufgabe7
     {
         public string question;
         public string callToAction;
+        public string type;
 
         public virtual void show(){
             Console.WriteLine(this.question);
