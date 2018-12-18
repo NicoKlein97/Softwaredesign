@@ -1,0 +1,10 @@
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe9\bin\Debug\netcoreapp2.0\Aufgabe9.deps.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe9\bin\Debug\netcoreapp2.0\Aufgabe9.runtimeconfig.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe9\bin\Debug\netcoreapp2.0\Aufgabe9.runtimeconfig.dev.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe9\bin\Debug\netcoreapp2.0\Aufgabe9.dll
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe9\bin\Debug\netcoreapp2.0\Aufgabe9.pdb
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe9\obj\Debug\netcoreapp2.0\Aufgabe9.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe9\obj\Debug\netcoreapp2.0\Aufgabe9.AssemblyInfoInputs.cache
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe9\obj\Debug\netcoreapp2.0\Aufgabe9.AssemblyInfo.cs
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe9\obj\Debug\netcoreapp2.0\Aufgabe9.dll
+C:\Users\Nico\Documents\GitHub\Softwaredesign\Aufgabe9\obj\Debug\netcoreapp2.0\Aufgabe9.pdb
