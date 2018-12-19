@@ -9,7 +9,7 @@
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/Aufgabe7/bin/Debug/netcoreapp2.0/Aufgabe7.dll",
+            "program": "${workspaceFolder}/Aufgabe9/bin/Debug/netcoreapp2.0/Aufgabe9.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
