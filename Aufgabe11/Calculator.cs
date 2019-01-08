@@ -7,7 +7,8 @@ namespace Aufgabe11
     {
         public event ReportProgressMethod ProgressMethod;
         public Calculator(){
-            ProgressMethod += ConsoleOutput;
+            ProgressMethod += ConsoleOutputProgressInPercent;
+            ProgressMethod += ConsoleOutputProgressInfo;
         }
         public void CalculateSomething(){
             for(int i = 0; i <= 100; i++){
@@ -16,8 +17,15 @@ namespace Aufgabe11
                }
             }
         }
-        public void ConsoleOutput(int progress){
-            Console.WriteLine(progress + " %");
+        public void ConsoleOutputProgressInPercent(int _progress){
+            Console.WriteLine(_progress + " %");
+        }
+        public void ConsoleOutputProgressInfo(int _progress){
+            if(_progress == 100){
+                Console.WriteLine("Done");
+            }else{
+                Console.WriteLine("Loading...");
+            }
         }
     }
 }
