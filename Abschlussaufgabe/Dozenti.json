@@ -1,0 +1,382 @@
+[
+    {
+        "name": "Dell Oro",
+        "courses": [{
+            "name": "Softwaredesign",
+            "semester": "4",
+            "numberOfStudents": "26",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Dell Oro",
+            "description": "Der mit Abstand zweitbeste Kurs",
+            "neededEquipment": ["Beamer", "Computer"]
+        }]
+    },
+    {
+        "name": "Waldowski",
+        "courses": [{
+            "name": "GDV",
+            "semester": "4",
+            "numberOfStudents": "26",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Waldowski",
+            "description": "Super Typ",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Lasowski",
+        "courses": [{
+            "name": "Mathe1",
+            "semester": "1",
+            "numberOfStudents": "40",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Lasowski",
+            "description": "Skalarprodukt!!!",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Hottong",
+        "courses": [{
+            "name": "Videotechnik",
+            "semester": "1",
+            "numberOfStudents": "120",
+            "coursesOfStudy": ["MIB","OMB", "MKB"],
+            "professor": "Hottong",
+            "description": "Schweine, Vögel und Bienen",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Digitale AV-Technik",
+            "semester": "5",
+            "numberOfStudents": "17",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Hottong",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Streaming Anwendungen",
+            "semester": "5",
+            "numberOfStudents": "17",
+            "coursesOfStudy": ["OMB"],
+            "professor": "Hottong",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Schneider",
+        "courses": [{
+            "name": "Physik",
+            "semester": "1",
+            "numberOfStudents": "40",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Schneider",
+            "description": "Linsen",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Mathe2",
+            "semester": "2",
+            "numberOfStudents": "32",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Schneider",
+            "description": "Hart aber Fair",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Geometrische und statistische Modelireung",
+            "semester": "2",
+            "numberOfStudents": "32",
+            "coursesOfStudy": ["OMB"],
+            "professor": "Schneider",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Mathematische Grundlagen von Computergrafik",
+            "semester": "2",
+            "numberOfStudents": "32",
+            "coursesOfStudy": ["OMB"],
+            "professor": "Schneider",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Pietsch",
+        "courses": [{
+            "name": "E-Business",
+            "semester": "4",
+            "numberOfStudents": "26",
+            "coursesOfStudy": ["OMB"],
+            "professor": "Pietsch",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Operatives Marketing",
+            "semester": "5",
+            "numberOfStudents": "17",
+            "coursesOfStudy": ["MKB"],
+            "professor": "Pietsch",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Online-Produktmanagement",
+            "semester": "6",
+            "numberOfStudents": "15",
+            "coursesOfStudy": ["OMB"],
+            "professor": "Pietsch",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Anders",
+        "courses": [{
+            "name": "Kommunikationssysteme",
+            "semester": "4",
+            "numberOfStudents": "26",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Anders",
+            "description": "...",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Webtechnologien",
+            "semester": "4",
+            "numberOfStudents": "26",
+            "coursesOfStudy": ["OMB"],
+            "professor": "Anders",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Dittler",
+        "courses": [{
+            "name": "Medienpsychologie",
+            "semester": "1",
+            "numberOfStudents": "120",
+            "coursesOfStudy": ["MIB","OMB", "MKB"],
+            "professor": "Dittler",
+            "description": "psycho",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "E-Learning",
+            "semester": "4",
+            "numberOfStudents": "26",
+            "coursesOfStudy": ["MKB"],
+            "professor": "Dittler",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Computer"]
+        }]
+    },
+    {
+        "name": "Krach",
+        "courses": [{
+            "name": "EIA",
+            "semester": "1",
+            "numberOfStudents": "40",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Krach",
+            "description": "CSS und so",
+            "neededEquipment": ["Beamer", "Computer"]
+        },{
+            "name": "UX-Design",
+            "semester": "2",
+            "numberOfStudents": "96",
+            "coursesOfStudy": ["MIB", "MKB", "OMB"],
+            "professor": "Krach",
+            "description": "Kein Kommentar",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Interface Design",
+            "semester": "5",
+            "numberOfStudents": "34",
+            "coursesOfStudy": ["OMB", "MKB"],
+            "professor": "Krach",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Herbstreit",
+        "courses": [{
+            "name": "Wirtschaft",
+            "semester": "1",
+            "numberOfStudents": "120",
+            "coursesOfStudy": ["MIB","OMB", "MKB"],
+            "professor": "Herbstreit",
+            "description": "Langweilig",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Fries",
+        "courses": [{
+            "name": "Mediengestaltung",
+            "semester": "1",
+            "numberOfStudents": "120",
+            "coursesOfStudy": ["MIB","OMB", "MKB"],
+            "professor": "Fries",
+            "description": "gestaltung",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Eisenbiegler",
+        "courses": [{
+            "name": "Programmieren",
+            "semester": "1",
+            "numberOfStudents": "80",
+            "coursesOfStudy": ["MIB","OMB"],
+            "professor": "Eisenbiegler",
+            "description": "Keiner mag Eclipse",
+            "neededEquipment": ["Beamer", "Computer"]
+        },{
+            "name": "Verteilte Anwendungen",
+            "semester": "5",
+            "numberOfStudents": "17",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Eisenbiegler",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Computer"]
+        }]
+    },
+    {
+        "name": "Müller",
+        "courses": [{
+            "name": "Computergrafik",
+            "semester": "2",
+            "numberOfStudents": "96",
+            "coursesOfStudy": ["MIB", "MKB", "OMB"],
+            "professor": "Müller",
+            "description": "Keiner mag Fusee",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Datenverarbeitung in Medienproduktion",
+            "semester": "5",
+            "numberOfStudents": "17",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Müller",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Computer"]
+        }]
+    },
+    {
+        "name": "Taube",
+        "courses": [{
+            "name": "GIS",
+            "semester": "2",
+            "numberOfStudents": "64",
+            "coursesOfStudy": ["MIB", "OMB"],
+            "professor": "Taube",
+            "description": "Entspannt",
+            "neededEquipment": ["Beamer", "Computer"]
+        }]
+    },
+    {
+        "name": "Zydorek",
+        "courses": [{
+            "name": "Medienökonomie",
+            "semester": "2",
+            "numberOfStudents": "96",
+            "coursesOfStudy": ["MIB", "MKB", "OMB"],
+            "professor": "Zydorek",
+            "description": "Noch langweiliger als es klingt",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Marketing",
+            "semester": "2",
+            "numberOfStudents": "96",
+            "coursesOfStudy": ["MIB", "MKB", "OMB"],
+            "professor": "Zydorek",
+            "description": "Überraschend unlame",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Medien und Kommunikationswirtschaft",
+            "semester": "4",
+            "numberOfStudents": "26",
+            "coursesOfStudy": ["OMB"],
+            "professor": "Zydorek",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "IT und Medienproduktionsmanagement",
+            "semester": "6",
+            "numberOfStudents": "15",
+            "coursesOfStudy": ["MIB"],
+            "professor": "Zydorek",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Reusch",
+        "courses": [{
+            "name": "AV Produktion",
+            "semester": "2",
+            "numberOfStudents": "64",
+            "coursesOfStudy": ["OMB", "MKB"],
+            "professor": "Reusch",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Friess",
+        "courses": [{
+            "name": "Medienanalyse",
+            "semester": "1",
+            "numberOfStudents": "40",
+            "coursesOfStudy": ["MKB"],
+            "professor": "Friess",
+            "description": "hehehe Anal....",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Konzeption",
+            "semester": "4",
+            "numberOfStudents": "26",
+            "coursesOfStudy": ["MKB"],
+            "professor": "Friess",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Medientheorie",
+            "semester": "6",
+            "numberOfStudents": "15",
+            "coursesOfStudy": ["MKB"],
+            "professor": "Friess",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Ruf",
+        "courses": [{
+            "name": "Creative Writing",
+            "semester": "4",
+            "numberOfStudents": "26",
+            "coursesOfStudy": ["MKB"],
+            "professor": "Ruf",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        },{
+            "name": "Storytelling",
+            "semester": "4",
+            "numberOfStudents": "26",
+            "coursesOfStudy": ["MKB"],
+            "professor": "Ruf",
+            "description": "Kp",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    },
+    {
+        "name": "Schäfer",
+        "courses": [{
+            "name": "Audiotechnik",
+            "semester": "1",
+            "numberOfStudents": "120",
+            "coursesOfStudy": ["MIB","OMB", "MKB"],
+            "professor": "Schäfer",
+            "description": "Klang",
+            "neededEquipment": ["Beamer", "Blackboard"]
+        }]
+    }
+]

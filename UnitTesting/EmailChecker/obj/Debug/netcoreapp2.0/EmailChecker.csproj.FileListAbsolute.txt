@@ -1,0 +1,10 @@
+C:\Users\Nico\Documents\GitHub\Softwaredesign\UnitTesting\EmailChecker\bin\Debug\netcoreapp2.0\EmailChecker.deps.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\UnitTesting\EmailChecker\bin\Debug\netcoreapp2.0\EmailChecker.runtimeconfig.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\UnitTesting\EmailChecker\bin\Debug\netcoreapp2.0\EmailChecker.runtimeconfig.dev.json
+C:\Users\Nico\Documents\GitHub\Softwaredesign\UnitTesting\EmailChecker\bin\Debug\netcoreapp2.0\EmailChecker.dll
+C:\Users\Nico\Documents\GitHub\Softwaredesign\UnitTesting\EmailChecker\bin\Debug\netcoreapp2.0\EmailChecker.pdb
+C:\Users\Nico\Documents\GitHub\Softwaredesign\UnitTesting\EmailChecker\obj\Debug\netcoreapp2.0\EmailChecker.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Documents\GitHub\Softwaredesign\UnitTesting\EmailChecker\obj\Debug\netcoreapp2.0\EmailChecker.AssemblyInfoInputs.cache
+C:\Users\Nico\Documents\GitHub\Softwaredesign\UnitTesting\EmailChecker\obj\Debug\netcoreapp2.0\EmailChecker.AssemblyInfo.cs
+C:\Users\Nico\Documents\GitHub\Softwaredesign\UnitTesting\EmailChecker\obj\Debug\netcoreapp2.0\EmailChecker.dll
+C:\Users\Nico\Documents\GitHub\Softwaredesign\UnitTesting\EmailChecker\obj\Debug\netcoreapp2.0\EmailChecker.pdb

@@ -1,0 +1,67 @@
+[
+    {
+        "roomnumber": "L1.05a",
+        "capacity": 30,
+        "interior": ["Beamer", "Blackboard"]
+    },{
+        "roomnumber": "L1.06a",
+        "capacity": 30,
+        "interior": ["Beamer", "Computer"]
+    },{
+        "roomnumber": "L2.05a",
+        "capacity": 30,
+        "interior": ["Beamer", "Blackboard"]
+    },{
+        "roomnumber": "L2.07a",
+        "capacity": 30,
+        "interior": ["Beamer", "Computer"]
+    },{
+        "roomnumber": "L2.08",
+        "capacity": 30,
+        "interior": ["Beamer", "Computer"]
+    },{
+        "roomnumber": "L2.09",
+        "capacity": 20,
+        "interior": ["Beamer", "Blackboard"]
+    },{
+        "roomnumber": "L2.10",
+        "capacity": 35,
+        "interior": ["Beamer", "Blackboard"]
+    },{
+        "roomnumber": "I1.17",
+        "capacity": 120,
+        "interior": ["Beamer", "Blackboard"]
+    },{
+        "roomnumber": "I1.19",
+        "capacity": 60,
+        "interior": ["Beamer", "Blackboard"]
+    },{
+        "roomnumber": "I1.20",
+        "capacity": 120,
+        "interior": ["Beamer", "Blackboard"]
+    },{
+        "roomnumber": "I1.21",
+        "capacity": 80,
+        "interior": ["Beamer", "Blackboard"]
+    },{
+        "roomnumber": "I2.14",
+        "capacity": 80,
+        "interior": ["Beamer", "Blackboard"]
+    },{
+        "roomnumber": "I2.18",
+        "capacity": 60,
+        "interior": ["Beamer", "Computer"]
+    },{
+        "roomnumber": "I2.19",
+        "capacity": 40,
+        "interior": ["Beamer", "Blackboard"]
+    },{
+        "roomnumber": "I2.20",
+        "capacity": 30,
+        "interior": ["Beamer", "Computer"]
+    },{
+        "roomnumber": "I2.21",
+        "capacity": 120,
+        "interior": ["Beamer", "Blackboard"]
+    }
+]

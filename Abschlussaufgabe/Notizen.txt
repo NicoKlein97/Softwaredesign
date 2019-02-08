@@ -1,0 +1,87 @@
+Semester1:
+EIA(MKB)
+Medienanalyse(MKB)
+Physik(MIB)
+Mathe(MIB)
+Progarmmieren(MIB, OMB)
+Audiotechnik
+Videotechnik
+Wirtschaft
+Medienpsychologie
+
+Semester2:
+GIS (MIB,OMB)
+Geometrische und statistische Modelireung (OMB)
+Computergrafik
+UX
+AV Produktion (MKB,OMB)
+Medienökonomie
+Marketing
+Mathematische Grundlagen von COmputergrafik(MKB)
+EIA2
+Mathe2(MIB)
+
+Semester3
+-------
+
+Semester4
+MIB:
+GDV
+Softwaredesign
+Kommunikationssysteme
+
+MKB:
+E-Learning
+Konzeption
+Creative Writing
+Storytelling
+
+OMB:
+Webtechnologie
+E-Busines
+Medien und Kommunikationswirtschaft
+
+Semester5
+MIB:
+Verteilte Anwendungen
+Digitale AV-Technik
+Datenverarbeitung in Medienproduktion
+
+OMB:
+Interface Design
+Streaming Anwendungen
+
+MKB:
+Operatives Marketing
+Interface Design
+
+Semester6:
+MIB:
+IT und Medienproduktionsmanagement
+
+MKB:
+Medientheorie
+
+OMB:
+Online-Produktmanagement und Online-Marketing
+
+
+"dellOro", 
+"Waldowski", 
+"Lasowski", 
+"Hottong",
+"Schneider", 
+"Pietsch", 
+"Anders",
+"Dittler", 
+"Krach", 
+"Herbstreit", 
+"Fries",
+"Eisenbiegler", 
+"Müller", 
+"Taube", 
+"Zydorek", 
+"Reusch", 
+"Friess", 
+"Aichele", 
+"Ruf"
