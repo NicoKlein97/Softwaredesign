@@ -61,16 +61,25 @@ namespace Abschlussaufgabe
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
+            
             TimetableCourses tableCourses = new TimetableCourses(allCoursesObjects, tableDozenti);
-            tableCourses.print();
+            //tableCourses.print();
+            //Console.WriteLine("");
+            
+            
             TimetableRooms tableRooms = new TimetableRooms(allRoomsObjects, tableCourses);
-            tableRooms.print();
+            //tableRooms.print();
             /*
             TimetableDozenti tableDozenti = new TimetableDozenti(allDozentiObjects);
             TimetableCourses tableCourses = new TimetableCourses(allCoursesObjects, tableDozenti);
             TimetableRooms tableRooms = new TimetableRooms(allRoomsObjects, tableCourses);
-            tableCourses.printCohortTimetable("MIB", 1);
+            
             */
+            tableCourses.printTimetable("MIB", 1);
+            Console.WriteLine("");
+            tableDozenti.printTimetable("Schneider", tableCourses, tableRooms);
+            Console.WriteLine("");
+            tableRooms.printTimetable("L2.10", tableCourses, tableDozenti);
         }
     }
 }

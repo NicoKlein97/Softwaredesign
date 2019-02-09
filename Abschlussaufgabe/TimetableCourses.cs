@@ -5,12 +5,12 @@ namespace Abschlussaufgabe
 {
     class TimetableCourses : Timetable
     {
-        public Dictionary<string, Courses> timesMonday = new Dictionary<string, Courses>();
-        public Dictionary<string, Courses> timesThuesday = new Dictionary<string, Courses>();
-        public Dictionary<string, Courses> timesWednesday = new Dictionary<string, Courses>();
-        public Dictionary<string, Courses> timesThursday = new Dictionary<string, Courses>();
-        public Dictionary<string, Courses> timesFriday = new Dictionary<string, Courses>();
-        public Dictionary<string, Dictionary<string, Courses>> days = new Dictionary<string, Dictionary<string, Courses>>();
+        public Dictionary<string, List<Courses>> timesMonday = new Dictionary<string, List<Courses>>();
+        public Dictionary<string, List<Courses>> timesThuesday = new Dictionary<string, List<Courses>>();
+        public Dictionary<string, List<Courses>> timesWednesday = new Dictionary<string, List<Courses>>();
+        public Dictionary<string, List<Courses>> timesThursday = new Dictionary<string, List<Courses>>();
+        public Dictionary<string, List<Courses>> timesFriday = new Dictionary<string, List<Courses>>();
+        public Dictionary<string, Dictionary<string, List<Courses>>> days = new Dictionary<string, Dictionary<string, List<Courses>>>();
 
         public TimetableCourses(List<Courses> _listCourses, TimetableDozenti _timetableDozenti)
         {
@@ -28,31 +28,47 @@ namespace Abschlussaufgabe
 
         public override void fillTimesDictionaries()
         {
-            Dictionary<string, Courses>[] timesOfDays = { timesMonday, timesThuesday, timesWednesday, timesThursday, timesFriday };
+            Dictionary<string, List<Courses>>[] timesOfDays = { timesMonday, timesThuesday, timesWednesday, timesThursday, timesFriday };
 
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 1; j < 7; j++)
                 {
-                    timesOfDays[i].Add(j + ".Block", null);
+                    List<Courses> coursesList = new List<Courses>();
+                    timesOfDays[i].Add(j + ".Block", coursesList);
                 }
             }
         }
         public void insertObjectsInCoursesTimetable(List<Courses> _listCourses, TimetableDozenti _timetableDozenti)
         {
-            Dictionary<string, Courses>[] timesOfDaysCourses = {this.timesMonday, this.timesThuesday, this.timesWednesday, this.timesThursday, this.timesFriday };
-            Dictionary<string, Dozenti>[] timesOfDaysDozenti = { _timetableDozenti.timesMonday, _timetableDozenti.timesThuesday, _timetableDozenti.timesWednesday, _timetableDozenti.timesThursday, _timetableDozenti.timesFriday };
-            
+            Dictionary<string, List<Courses>>[] timesOfDaysCourses = { this.timesMonday, this.timesThuesday, this.timesWednesday, this.timesThursday, this.timesFriday };
+            Dictionary<string, List<Dozenti>>[] timesOfDaysDozenti = { _timetableDozenti.timesMonday, _timetableDozenti.timesThuesday, _timetableDozenti.timesWednesday, _timetableDozenti.timesThursday, _timetableDozenti.timesFriday };
+
             for (int i = 0; i < timesOfDaysDozenti.Length; i++)
             {
                 for (int j = 1; j < 7; j++)
                 {
-                    Dozenti dozent = timesOfDaysDozenti[i][j + ".Block"];
-                    if (dozent != null)
+                    for (int k = 0; k < timesOfDaysDozenti[i][j + ".Block"].Count; k++)
                     {
-                        for(int k = 0; k < _listCourses.Count; k++){
-                            if(_listCourses[k].professor == dozent.name){
-                                timesOfDaysCourses[i][j + ".Block"] = _listCourses[k];
+                        Dozenti dozent = timesOfDaysDozenti[i][j + ".Block"][k];
+                        for (int l = 0; l < _listCourses.Count; l++)
+                        {
+                            if (_listCourses[l].professor == dozent.name)
+                            {
+                                bool existing = false;
+                                for (int m = 0; m < timesOfDaysCourses[i][j + ".Block"].Count; m++)
+                                {
+                                    if (timesOfDaysCourses[i][j + ".Block"][m].professor == dozent.name)
+                                    {
+                                        existing = true;
+                                        break;
+                                    }
+                                }
+                                if (existing == false)
+                                {
+                                    timesOfDaysCourses[i][j + ".Block"].Add(_listCourses[l]);
+                                    _listCourses.Remove(_listCourses[l]);
+                                }
                             }
                         }
                     }
@@ -60,16 +76,22 @@ namespace Abschlussaufgabe
             }
         }
 
-        public void printCohortTimetable(string _courseOfStudy, int _semester){
-            Dictionary<string, Courses>[] timesOfDaysCourses = {this.timesMonday, this.timesThuesday, this.timesWednesday, this.timesThursday, this.timesFriday };
-            for (int i = 0; i < 5; i++)
+        public void printTimetable(string _courseOfStudy, int _semester)
+        {
+            string[] dayNames = { "Monday", "Thuesday", "Wednesday", "Thursday", "Friday" };
+            Dictionary<string, List<Courses>>[] timesOfDaysCourses = { this.timesMonday, this.timesThuesday, this.timesWednesday, this.timesThursday, this.timesFriday };
+            for (int i = 0; i < timesOfDaysCourses.Length; i++)
             {
                 for (int j = 1; j < 7; j++)
                 {
-                    if(timesOfDaysCourses[i][j + ".Block"] != null && timesOfDaysCourses[i][j + ".Block"].semester == _semester){
-                        for(int k = 0; k < timesOfDaysCourses[i][j + ".Block"].coursesOfStudy.Length; k++){
-                            if(timesOfDaysCourses[i][j + ".Block"].coursesOfStudy[k] == _courseOfStudy){
-                                Console.WriteLine(j + ".Block: " + timesOfDaysCourses[i][j + ".Block"].coursesOfStudy[k]);
+                    for (int k = 0; k < timesOfDaysCourses[i][j + ".Block"].Count; k++)
+                    {
+                        Courses course = timesOfDaysCourses[i][j + ".Block"][k];
+                        for (int l = 0; l < course.coursesOfStudy.Length; l++)
+                        {
+                            if (course.semester == _semester && course.coursesOfStudy[l] == _courseOfStudy)
+                            {
+                                Console.WriteLine(dayNames[i] + ": " + j + ".Block: " + course.name);
                             }
                         }
                     }
@@ -77,40 +99,57 @@ namespace Abschlussaufgabe
             }
         }
 
-        public void print(){
-            for(int i = 1; i < 7; i++){
-                if(this.timesMonday[i + ".Block"] == null){
-                    
-                }else{
-                    Console.WriteLine(this.timesMonday[i + ".Block"].name + "  ---" + i);
+
+        public void print()
+        {
+            for (int i = 1; i < 7; i++)
+            {
+                for (int j = 0; j < timesMonday[i + ".Block"].Count; j++)
+                {
+                    Console.Write("Montag");
+                    Console.Write("");
+                    Console.Write("");
+                    Console.WriteLine(timesMonday[i + ".Block"][j].name + "-----" + i);
                 }
             }
-            for(int i = 1; i < 7; i++){
-                if(this.timesThuesday[i + ".Block"] == null){
-                    
-                }else{
-                    Console.WriteLine(this.timesThuesday[i + ".Block"].name + "  ---" + i);
+            for (int i = 1; i < 7; i++)
+            {
+                for (int j = 0; j < timesThuesday[i + ".Block"].Count; j++)
+                {
+                    Console.Write("Dienstag");
+                    Console.Write("");
+                    Console.Write("");
+                    Console.WriteLine(timesThuesday[i + ".Block"][j].name + "-----" + i);
                 }
             }
-            for(int i = 1; i < 7; i++){
-                if(this.timesWednesday[i + ".Block"] == null){
-                    
-                }else{
-                    Console.WriteLine(this.timesWednesday[i + ".Block"].name + "  ---" + i);
+            for (int i = 1; i < 7; i++)
+            {
+                for (int j = 0; j < timesWednesday[i + ".Block"].Count; j++)
+                {
+                    Console.Write("Mittwoch");
+                    Console.Write("");
+                    Console.Write("");
+                    Console.WriteLine(timesWednesday[i + ".Block"][j].name + "-----" + i);
                 }
             }
-            for(int i = 1; i < 7; i++){
-                if(this.timesThursday[i + ".Block"] == null){
-                    
-                }else{
-                    Console.WriteLine(this.timesThursday[i + ".Block"].name + "  ---" + i);
+            for (int i = 1; i < 7; i++)
+            {
+                for (int j = 0; j < timesThursday[i + ".Block"].Count; j++)
+                {
+                    Console.Write("Donnerstag");
+                    Console.Write("");
+                    Console.Write("");
+                    Console.WriteLine(timesThursday[i + ".Block"][j].name + "-----" + i);
                 }
             }
-            for(int i = 1; i < 7; i++){
-                if(this.timesFriday[i + ".Block"] == null){
-                    
-                }else{
-                    Console.WriteLine(this.timesFriday[i + ".Block"].name + "  ---" + i);
+            for (int i = 1; i < 7; i++)
+            {
+                for (int j = 0; j < timesFriday[i + ".Block"].Count; j++)
+                {
+                    Console.Write("Freitag");
+                    Console.Write("");
+                    Console.Write("");
+                    Console.WriteLine(timesFriday[i + ".Block"][j].name + "-----" + i);
                 }
             }
         }
