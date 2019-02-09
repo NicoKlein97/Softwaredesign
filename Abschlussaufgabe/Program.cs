@@ -55,8 +55,9 @@ namespace Abschlussaufgabe
             }
             //allRoomsObjects[3].print();
             
+             
             TimetableDozenti tableDozenti = new TimetableDozenti(allDozentiObjects);
-            tableDozenti.print();
+            
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -64,6 +65,12 @@ namespace Abschlussaufgabe
             tableCourses.print();
             TimetableRooms tableRooms = new TimetableRooms(allRoomsObjects, tableCourses);
             tableRooms.print();
+            /*
+            TimetableDozenti tableDozenti = new TimetableDozenti(allDozentiObjects);
+            TimetableCourses tableCourses = new TimetableCourses(allCoursesObjects, tableDozenti);
+            TimetableRooms tableRooms = new TimetableRooms(allRoomsObjects, tableCourses);
+            tableCourses.printCohortTimetable("MIB", 1);
+            */
         }
     }
 }

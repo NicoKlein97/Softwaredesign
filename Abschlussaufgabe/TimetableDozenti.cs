@@ -23,6 +23,7 @@ namespace Abschlussaufgabe
             days.Add("Thursday", timesThursday);
             days.Add("Friday", timesFriday);
 
+            _iList = duplicateProfessorsAcordingToCourses(_iList);
             insertObjectsInRandomTime(_iList);
         }
 
@@ -39,7 +40,26 @@ namespace Abschlussaufgabe
             }
         }
 
-        public void insertObjectsInRandomTime(List<Dozenti> _iList)
+        private List<Dozenti> duplicateProfessorsAcordingToCourses(List<Dozenti> _iList){
+            int initialLength = _iList.Count;
+            for(int i = 0; i < initialLength; i++){
+                if(_iList[i].courses.Length <= 1){
+                    continue;
+                }else{
+                    for(int j = 0; j < _iList[i].courses.Length -1; j++){
+                        _iList.Add(_iList[i]);
+                    }
+                }
+            }
+
+
+            foreach(Dozenti d in _iList){
+                Console.WriteLine(d.name);
+            }
+            return _iList;
+        }
+
+        private void insertObjectsInRandomTime(List<Dozenti> _iList)
         {
             while (_iList.Count != 0)
             {
@@ -52,11 +72,12 @@ namespace Abschlussaufgabe
                 List<string> keyListInner = new List<string>(days[randomDay].Keys);
                 string randomTime = keyListInner[random.Next(keyListInner.Count)];
 
+                /* 
                 if (days[randomDay][randomTime] != null)
                 {
                     insertObjectsInRandomTime(_iList);
                 }
-
+*/
                 if (_iList.Count != 0)
                 {
                     days[randomDay][randomTime] = _iList[0];

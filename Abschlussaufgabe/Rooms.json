@@ -49,7 +49,7 @@
         "interior": ["Beamer", "Blackboard"]
     },{
         "roomnumber": "I2.18",
-        "capacity": 60,
+        "capacity": 80,
         "interior": ["Beamer", "Computer"]
     },{
         "roomnumber": "I2.19",

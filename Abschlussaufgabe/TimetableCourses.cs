@@ -60,6 +60,23 @@ namespace Abschlussaufgabe
             }
         }
 
+        public void printCohortTimetable(string _courseOfStudy, int _semester){
+            Dictionary<string, Courses>[] timesOfDaysCourses = {this.timesMonday, this.timesThuesday, this.timesWednesday, this.timesThursday, this.timesFriday };
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 1; j < 7; j++)
+                {
+                    if(timesOfDaysCourses[i][j + ".Block"] != null && timesOfDaysCourses[i][j + ".Block"].semester == _semester){
+                        for(int k = 0; k < timesOfDaysCourses[i][j + ".Block"].coursesOfStudy.Length; k++){
+                            if(timesOfDaysCourses[i][j + ".Block"].coursesOfStudy[k] == _courseOfStudy){
+                                Console.WriteLine(j + ".Block: " + timesOfDaysCourses[i][j + ".Block"].coursesOfStudy[k]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         public void print(){
             for(int i = 1; i < 7; i++){
                 if(this.timesMonday[i + ".Block"] == null){

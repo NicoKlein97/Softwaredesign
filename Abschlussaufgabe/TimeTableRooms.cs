@@ -57,8 +57,6 @@ namespace Abschlussaufgabe
                                 timesOfDaysRooms[i][j + ".Block"] = _listRooms[k];
                                 _listRooms.Add(_listRooms[k]);
                                 _listRooms.Remove(_listRooms[k]);
-                            }else{
-                                
                             }
                         }
                     }
@@ -78,7 +76,7 @@ namespace Abschlussaufgabe
         }
 
         private bool compareCapacity(Rooms _room, Courses _course){
-            if(_room.capacity - _course.numberOfStudents <= 15 && _room.capacity - _course.numberOfStudents >= 0){
+            if(_room.capacity - _course.numberOfStudents <= 20 && _room.capacity - _course.numberOfStudents >= 0){
                 return true;
             }else{
                 return false;
