@@ -1,7 +1,7 @@
 [
     {
         "roomnumber": "L1.05a",
-        "capacity": 30,
+        "capacity": 50,
         "interior": ["Beamer", "Blackboard"]
     },{
         "roomnumber": "L1.06a",
@@ -13,7 +13,7 @@
         "interior": ["Beamer", "Blackboard"]
     },{
         "roomnumber": "L2.07a",
-        "capacity": 30,
+        "capacity": 50,
         "interior": ["Beamer", "Computer"]
     },{
         "roomnumber": "L2.08",

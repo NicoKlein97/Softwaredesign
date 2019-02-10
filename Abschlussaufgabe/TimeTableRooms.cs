@@ -77,7 +77,7 @@ namespace Abschlussaufgabe
         }
 
         private bool compareCapacity(Rooms _room, Courses _course){
-            if(_room.capacity - _course.numberOfStudents <= 20 && _room.capacity - _course.numberOfStudents >= 0){
+            if(_room.capacity - _course.numberOfStudents <= 25 && _room.capacity - _course.numberOfStudents >= 0){
                 return true;
             }else{
                 return false;
@@ -104,60 +104,6 @@ namespace Abschlussaufgabe
                         }
 
                     }
-                }
-            }
-        }
-
-        public void print()
-        {
-            for (int i = 1; i < 7; i++)
-            {
-                for (int j = 0; j < timesMonday[i + ".Block"].Count; j++)
-                {
-                    Console.Write("Montag");
-                    Console.Write("");
-                    Console.Write("");
-                    Console.WriteLine(timesMonday[i + ".Block"][j].roomnumber + "-----" + i);
-                }
-            }
-            for (int i = 1; i < 7; i++)
-            {
-                for (int j = 0; j < timesThuesday[i + ".Block"].Count; j++)
-                {
-                    Console.Write("Dienstag");
-                    Console.Write("");
-                    Console.Write("");
-                    Console.WriteLine(timesThuesday[i + ".Block"][j].roomnumber + "-----" + i);
-                }
-            }
-            for (int i = 1; i < 7; i++)
-            {
-                for (int j = 0; j < timesWednesday[i + ".Block"].Count; j++)
-                {
-                    Console.Write("Mittwoch");
-                    Console.Write("");
-                    Console.Write("");
-                    Console.WriteLine(timesWednesday[i + ".Block"][j].roomnumber + "-----" + i);
-                }
-            }
-            for (int i = 1; i < 7; i++)
-            {
-                for (int j = 0; j < timesThursday[i + ".Block"].Count; j++)
-                {
-                    Console.Write("Donnerstag");
-                    Console.Write("");
-                    Console.Write("");
-                    Console.WriteLine(timesThursday[i + ".Block"][j].roomnumber + "-----" + i);
-                }
-            }
-            for (int i = 1; i < 7; i++)
-            {
-                for (int j = 0; j < timesFriday[i + ".Block"].Count; j++)
-                {
-                    Console.Write("Freitag");
-                    Console.Write("");
-                    Console.Write("");
-                    Console.WriteLine(timesFriday[i + ".Block"][j].roomnumber + "-----" + i);
                 }
             }
         }

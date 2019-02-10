@@ -99,57 +99,20 @@ namespace Abschlussaufgabe
             }
         }
 
-
-        public void print()
+        public void printAllCoursesTimetable(TimetableRooms _rooms)
         {
-            for (int i = 1; i < 7; i++)
+            string[] dayNames = { "Monday", "Thuesday", "Wednesday", "Thursday", "Friday" };
+            Dictionary<string, List<Courses>>[] timesOfDaysCourses = { this.timesMonday, this.timesThuesday, this.timesWednesday, this.timesThursday, this.timesFriday };
+            for (int i = 0; i < timesOfDaysCourses.Length; i++)
             {
-                for (int j = 0; j < timesMonday[i + ".Block"].Count; j++)
+                for (int j = 1; j < 7; j++)
                 {
-                    Console.Write("Montag");
-                    Console.Write("");
-                    Console.Write("");
-                    Console.WriteLine(timesMonday[i + ".Block"][j].name + "-----" + i);
-                }
-            }
-            for (int i = 1; i < 7; i++)
-            {
-                for (int j = 0; j < timesThuesday[i + ".Block"].Count; j++)
-                {
-                    Console.Write("Dienstag");
-                    Console.Write("");
-                    Console.Write("");
-                    Console.WriteLine(timesThuesday[i + ".Block"][j].name + "-----" + i);
-                }
-            }
-            for (int i = 1; i < 7; i++)
-            {
-                for (int j = 0; j < timesWednesday[i + ".Block"].Count; j++)
-                {
-                    Console.Write("Mittwoch");
-                    Console.Write("");
-                    Console.Write("");
-                    Console.WriteLine(timesWednesday[i + ".Block"][j].name + "-----" + i);
-                }
-            }
-            for (int i = 1; i < 7; i++)
-            {
-                for (int j = 0; j < timesThursday[i + ".Block"].Count; j++)
-                {
-                    Console.Write("Donnerstag");
-                    Console.Write("");
-                    Console.Write("");
-                    Console.WriteLine(timesThursday[i + ".Block"][j].name + "-----" + i);
-                }
-            }
-            for (int i = 1; i < 7; i++)
-            {
-                for (int j = 0; j < timesFriday[i + ".Block"].Count; j++)
-                {
-                    Console.Write("Freitag");
-                    Console.Write("");
-                    Console.Write("");
-                    Console.WriteLine(timesFriday[i + ".Block"][j].name + "-----" + i);
+                    for (int k = 0; k < timesOfDaysCourses[i][j + ".Block"].Count; k++)
+                    {
+                        Courses course = timesOfDaysCourses[i][j + ".Block"][k];
+                        Console.WriteLine(dayNames[i] + ": " + j + ".Block: " +
+                        course.name + ": " + _rooms.days[dayNames[i]][j + ".Block"][k].roomnumber);
+                    }
                 }
             }
         }
