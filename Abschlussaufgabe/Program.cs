@@ -11,17 +11,21 @@ namespace Abschlussaufgabe
         public static List<Dozenti> allDozentiObjects = new List<Dozenti>();
         public static List<Courses> allCoursesObjects = new List<Courses>();
         public static List<Rooms> allRoomsObjects = new List<Rooms>();
+        public static List<WPVs> allWPVObjects = new List<WPVs>();
+        
         static void Main(string[] args)
         {
             fillListsWithJsonData();
 
-            TimetableDozenti tableDozenti = new TimetableDozenti(allDozentiObjects);
+            TimetableWPVs tableWPVs = new TimetableWPVs(allWPVObjects);
+            TimetableDozenti tableDozenti = new TimetableDozenti(allDozentiObjects, tableWPVs);
             TimetableCourses tableCourses = new TimetableCourses(allCoursesObjects, tableDozenti);
-            TimetableRooms tableRooms = new TimetableRooms(allRoomsObjects, tableCourses);
+            TimetableRooms tableRooms = new TimetableRooms(allRoomsObjects, tableCourses, tableWPVs);
+            
 
             bool runProgram = true;
 
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Gooday Day, what would you like to do ?");
 
             while (runProgram == true)
@@ -44,7 +48,8 @@ namespace Abschlussaufgabe
                         Console.WriteLine("Which Semester are you interested in ?");
                         string semesterString = Console.ReadLine();
                         int semesterNumber = Int32.Parse(semesterString);
-                        tableCourses.printTimetable(course, semesterNumber);
+                        Console.Clear();
+                        tableCourses.printTimetable(course, semesterNumber, tableWPVs);
                         break;
 
                     case "2":
@@ -108,6 +113,16 @@ namespace Abschlussaufgabe
                 for (int i = 0; i < TBR.Count; i++)
                 {
                     allRoomsObjects.Add(TBR[i]);
+                }
+            }
+
+            StreamReader readerWPVs = new StreamReader("WPVs.json");
+            {
+                string json = readerWPVs.ReadToEnd();
+                List<WPVs> TBW = JsonConvert.DeserializeObject<List<WPVs>>(json);
+                for (int i = 0; i < TBW.Count; i++)
+                {
+                    allWPVObjects.Add(TBW[i]);
                 }
             }
         }

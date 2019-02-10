@@ -76,8 +76,9 @@ namespace Abschlussaufgabe
             }
         }
 
-        public void printTimetable(string _courseOfStudy, int _semester)
+        public void printTimetable(string _courseOfStudy, int _semester, TimetableWPVs _tableWPVs)
         {
+            List<string> usedTimeslots = new List<string>();
             string[] dayNames = { "Monday", "Thuesday", "Wednesday", "Thursday", "Friday" };
             Dictionary<string, List<Courses>>[] timesOfDaysCourses = { this.timesMonday, this.timesThuesday, this.timesWednesday, this.timesThursday, this.timesFriday };
             for (int i = 0; i < timesOfDaysCourses.Length; i++)
@@ -92,9 +93,43 @@ namespace Abschlussaufgabe
                             if (course.semester == _semester && course.coursesOfStudy[l] == _courseOfStudy)
                             {
                                 Console.WriteLine(dayNames[i] + ": " + j + ".Block: " + course.name);
+                                usedTimeslots.Add(dayNames[i]);
+                                usedTimeslots.Add(j + "Block");
                             }
                         }
                     }
+                }
+            }
+            Console.WriteLine("");
+            Console.WriteLine("For you possible WPVs: ");
+            checkAndOutputPossibleWPVs(usedTimeslots, _tableWPVs);
+        }
+
+        private void checkAndOutputPossibleWPVs(List<string> _usedTimeslots, TimetableWPVs _tableWPVs)
+        {
+            string[] dayNames = { "Monday", "Thuesday", "Wednesday", "Thursday", "Friday" };
+            for (int i = 0; i < dayNames.Length; i++)
+            {
+                for (int j = 1; j < 7; j++)
+                {
+                    for (int k = 0; k < _tableWPVs.days[dayNames[i]][j + ".Block"].Count; k++)
+                    {
+                        WPVs wpv = _tableWPVs.days[dayNames[i]][j + ".Block"][k];
+                        bool unusedSlot = true;
+                        for (int l = 0; l < _usedTimeslots.Count; l += 2)
+                        {
+                            if (_usedTimeslots[l] == dayNames[i] && _usedTimeslots[l + 1] == j + ".Block")
+                            {
+                                unusedSlot = false;
+                            }
+                        }
+                        if (unusedSlot == true)
+                        {
+                            Console.WriteLine(wpv.name + ": " + dayNames[i] + ": " + j + ".block: "
+                            + wpv.assignedRoom.roomnumber);
+                        }
+                    }
+
                 }
             }
         }

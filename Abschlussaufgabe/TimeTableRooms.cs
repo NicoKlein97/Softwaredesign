@@ -12,7 +12,7 @@ namespace Abschlussaufgabe
         public Dictionary<string, List<Rooms>> timesFriday = new Dictionary<string, List<Rooms>>();
         public Dictionary<string, Dictionary<string, List<Rooms>>> days = new Dictionary<string, Dictionary<string, List<Rooms>>>();
 
-        public TimetableRooms(List<Rooms> _listRooms, TimetableCourses _tableCourses)
+        public TimetableRooms(List<Rooms> _listRooms, TimetableCourses _tableCourses, TimetableWPVs _tableWPVs)
         {
 
             fillTimesDictionaries();
@@ -24,6 +24,7 @@ namespace Abschlussaufgabe
             days.Add("Friday", timesFriday);
 
             insertObjectsInRoomsTimetable(_listRooms, _tableCourses);
+            assignRoomsToWPVs(_listRooms, _tableWPVs);
         }
         public override void fillTimesDictionaries()
         {
@@ -48,13 +49,14 @@ namespace Abschlussaufgabe
             {
                 for (int j = 1; j < 7; j++)
                 {
-                    for(int k = 0; k < timesOfDaysCourses[i][j + ".Block"].Count; k++){
+                    for (int k = 0; k < timesOfDaysCourses[i][j + ".Block"].Count; k++)
+                    {
                         Courses course = timesOfDaysCourses[i][j + ".Block"][k];
                         for (int l = 0; l < _listRooms.Count; l++)
                         {
                             if (compareCapacity(_listRooms[l], course) && compareInterior(_listRooms[l], course))
                             {
-                                timesOfDaysRooms[i][j + ".Block"].Add( _listRooms[l]);
+                                timesOfDaysRooms[i][j + ".Block"].Add(_listRooms[l]);
                                 _listRooms.Add(_listRooms[l]);
                                 _listRooms.Remove(_listRooms[l]);
                                 break;
@@ -65,21 +67,60 @@ namespace Abschlussaufgabe
             }
         }
 
-        private bool compareInterior(Rooms _room, Courses _course){
-            for(int i = 0; i < _course.neededEquipment.Length; i++){
-                if(Array.Exists(_room.interior, element => element == _course.neededEquipment[i])){
+        private void assignRoomsToWPVs(List<Rooms> _listRooms, TimetableWPVs _tableWPVs)
+        {
+            string[] dayNames = { "Monday", "Thuesday", "Wednesday", "Thursday", "Friday" };
+            for (int i = 0; i < dayNames.Length; i++)
+            {
+                for (int j = 1; j < 7; j++)
+                {
+                    for (int k = 0; k < _tableWPVs.days[dayNames[i]][j + ".Block"].Count; k++)
+                    {
+                        WPVs wpv = _tableWPVs.days[dayNames[i]][j + ".Block"][k];
+                        if (this.days[dayNames[i]][j + ".Block"].Count == 0)
+                        {
+                            _tableWPVs.days[dayNames[i]][j + ".Block"][k].assignedRoom = _listRooms[0];
+                        }
+                        else
+                        {
+                            for (int l = 0; l < _listRooms.Count; l++)
+                            {
+                                if (_listRooms[l].roomnumber != this.days[dayNames[i]][j + ".Block"][0].roomnumber)
+                                {
+                                    wpv.assignedRoom = _listRooms[l];
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private bool compareInterior(Rooms _room, Courses _course)
+        {
+            for (int i = 0; i < _course.neededEquipment.Length; i++)
+            {
+                if (Array.Exists(_room.interior, element => element == _course.neededEquipment[i]))
+                {
                     continue;
-                }else{
+                }
+                else
+                {
                     return false;
                 }
             }
             return true;
         }
 
-        private bool compareCapacity(Rooms _room, Courses _course){
-            if(_room.capacity - _course.numberOfStudents <= 25 && _room.capacity - _course.numberOfStudents >= 0){
+        private bool compareCapacity(Rooms _room, Courses _course)
+        {
+            if (_room.capacity - _course.numberOfStudents <= 25 && _room.capacity - _course.numberOfStudents >= 0)
+            {
                 return true;
-            }else{
+            }
+            else
+            {
                 return false;
             }
         }

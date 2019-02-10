@@ -12,7 +12,7 @@ namespace Abschlussaufgabe
         public Dictionary<string, List<Dozenti>> timesFriday = new Dictionary<string, List<Dozenti>>();
         public Dictionary<string, Dictionary<string, List<Dozenti>>> days = new Dictionary<string, Dictionary<string, List<Dozenti>>>();
 
-        public TimetableDozenti(List<Dozenti> _iList)
+        public TimetableDozenti(List<Dozenti> _iList, TimetableWPVs _tableWPVs)
         {
 
             fillTimesDictionaries();
@@ -23,8 +23,9 @@ namespace Abschlussaufgabe
             days.Add("Thursday", timesThursday);
             days.Add("Friday", timesFriday);
 
+            //insertWPVsInTable(_tableWPVs, _iList);
             _iList = duplicateProfessorsAcordingToCourses(_iList);
-            insertDozentiInRandomTime(_iList);
+            insertDozentiInRandomTime(_iList, _tableWPVs);
         }
 
         public override void fillTimesDictionaries()
@@ -40,7 +41,23 @@ namespace Abschlussaufgabe
                 }
             }
         }
-
+        /* 
+                private void insertWPVsInTable(TimetableWPVs _tableWPVs, List<Dozenti> _listDozenti){
+                    string[] dayNames = { "Monday", "Thuesday", "Wednesday", "Thursday", "Friday" };
+                    for(int i= 0; i < dayNames.Length; i++){
+                        for(int j = 1; j < 7; j++){
+                            for (int k = 0; k < _tableWPVs.days[dayNames[i]][j + ".Block"].Count; k++){
+                                WPVs wpv = _tableWPVs.days[dayNames[i]][j + ".Block"][k];
+                                for(int l = 0; l < _listDozenti.Count; l++){
+                                    if(_listDozenti[l].name == wpv.professor){
+                                        this.days[dayNames[i]][j + ".Block"].Add(_listDozenti[l]);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+        */
         private List<Dozenti> duplicateProfessorsAcordingToCourses(List<Dozenti> _iList)
         {
             int initialLength = _iList.Count;
@@ -58,15 +75,13 @@ namespace Abschlussaufgabe
                     }
                 }
             }
-
             return _iList;
         }
 
-        private void insertDozentiInRandomTime(List<Dozenti> _iList)
+        private void insertDozentiInRandomTime(List<Dozenti> _iList, TimetableWPVs _tableWPVs)
         {
             while (_iList.Count != 0)
             {
-
                 Random rand = new Random();
                 List<string> keyList = new List<string>(days.Keys);
                 string randomDay = keyList[rand.Next(keyList.Count)];
@@ -77,16 +92,34 @@ namespace Abschlussaufgabe
 
                 if (_iList.Count != 0)
                 {
-                    bool existing = false;
+                    bool placingAllowed = true;
                     foreach (Dozenti d in days[randomDay][randomTime])
                     {
                         if (d.name == _iList[0].name)
                         {
-                            existing = true;
+                            placingAllowed = false;
                             break;
                         }
+
+                        for (int i = 0; i < d.unavailable.Length; i++)
+                        {
+                            string[] splittetUnavailability = d.unavailable[i].Split(":");
+                            if (splittetUnavailability[0] == randomDay && splittetUnavailability[1] == randomTime)
+                            {
+                                placingAllowed = false;
+                            }
+                        }
+
+                        for (int j = 0; j < _tableWPVs.days[randomDay][randomTime].Count; j++)
+                        {
+                            if (_tableWPVs.days[randomDay][randomTime][j].professor == d.name)
+                            {
+                                placingAllowed = false;
+                            }
+                        }
                     }
-                    if (existing == false)
+
+                    if (placingAllowed == true)
                     {
                         days[randomDay][randomTime].Add(_iList[0]);
                         _iList.Remove(_iList[0]);
@@ -113,7 +146,6 @@ namespace Abschlussaufgabe
                              _courses.days[dayNames[i]][j + ".Block"][k].name + ": " +
                              _rooms.days[dayNames[i]][j + ".Block"][k].roomnumber);
                         }
-
                     }
                 }
             }

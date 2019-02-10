@@ -9,7 +9,24 @@
             "professor": "Dell Oro",
             "description": "Der mit Abstand zweitbeste Kurs",
             "neededEquipment": ["Beamer", "Computer"]
-        }]
+        }],
+        "wpvs": [{
+            "name": "Gamedesign",
+            "numberOfStudents": "12",
+            "dateAndTime": "Thuesday:1.Block",
+            "professor": "Dell Oro",
+            "description": "VIDEOSPIELE",
+            "neededEquipment": ["Beamer", "Computer"]   
+        },
+        {
+            "name": "Spieleentwicklung",
+            "numberOfStudents": "12",
+            "dateAndTime": "Wednesday:1.Block",
+            "professor": "Dell Oro",
+            "description": "Videospiiieleee",
+            "neededEquipment": ["Beamer", "Computer"]   
+        }],
+        "unavailable": ["Friday:1.Block", "Friday:2.Block", "Friday:3.Block" ]
     },
     {
         "name": "Waldowski",
@@ -21,7 +38,8 @@
             "professor": "Waldowski",
             "description": "Super Typ",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "unavailable": ["Thursday:3.Block"]
     },
     {
         "name": "Lasowski",
@@ -33,7 +51,16 @@
             "professor": "Lasowski",
             "description": "Skalarprodukt!!!",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "wpvs": [{
+            "name": "Introduction to deep Learning",
+            "numberOfStudents": "12",
+            "dateAndTime": "Wednesday:3.Block",
+            "professor": "Lasowski",
+            "description": "Was auch immer das ist",
+            "neededEquipment": ["Beamer", "Blackboard"]   
+        }],
+        "unavailable": ["Monday:5.Block", "Monday:6.Block"]
     },
     {
         "name": "Hottong",
@@ -61,7 +88,8 @@
             "professor": "Hottong",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "unavailable": ["Wedensday:3.Block", "Friday:1.Block"]
     },
     {
         "name": "Schneider",
@@ -97,7 +125,8 @@
             "professor": "Schneider",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "unavailable": []
     },
     {
         "name": "Pietsch",
@@ -125,7 +154,8 @@
             "professor": "Pietsch",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "unavailable": ["Thursday:4.Block"]
     },
     {
         "name": "Anders",
@@ -145,7 +175,8 @@
             "professor": "Anders",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "unavailable": ["Monday:1.Block", "Friday:2.Block"]
     },
     {
         "name": "Dittler",
@@ -165,7 +196,8 @@
             "professor": "Dittler",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Computer"]
-        }]
+        }],
+        "unavailable": ["Wednesday:5.Block", "Wednesday:6.Block"]
     },
     {
         "name": "Krach",
@@ -193,7 +225,8 @@
             "professor": "Krach",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "unavailable": []
     },
     {
         "name": "Herbstreit",
@@ -205,7 +238,8 @@
             "professor": "Herbstreit",
             "description": "Langweilig",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "unavailable": ["Monday:1.Block", "Monday:2.Block"]
     },
     {
         "name": "Fries",
@@ -217,7 +251,16 @@
             "professor": "Fries",
             "description": "gestaltung",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "wpvs": [{
+            "name": "Fotografie",
+            "numberOfStudents": "12",
+            "dateAndTime": "Monday:1.Block",
+            "professor": "Fries",
+            "description": "Max Caulfield lässt grüßen",
+            "neededEquipment": ["Beamer", "Blackboard"]   
+        }],
+        "unavailable": ["Wednesday:5.Block"]
     },
     {
         "name": "Eisenbiegler",
@@ -237,7 +280,8 @@
             "professor": "Eisenbiegler",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Computer"]
-        }]
+        }],
+        "unavailable": []
     },
     {
         "name": "Müller",
@@ -257,7 +301,8 @@
             "professor": "Müller",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Computer"]
-        }]
+        }],
+        "unavailable": ["Thursday:2.Block"]
     },
     {
         "name": "Taube",
@@ -269,7 +314,8 @@
             "professor": "Taube",
             "description": "Entspannt",
             "neededEquipment": ["Beamer", "Computer"]
-        }]
+        }],
+        "unavailable": ["Friday:6.Block"]
     },
     {
         "name": "Zydorek",
@@ -305,7 +351,16 @@
             "professor": "Zydorek",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "wpvs": [{
+            "name": "Mediale Gegenkultur",
+            "numberOfStudents": "12",
+            "dateAndTime": "Friday:3.Block",
+            "professor": "Zydorek",
+            "description": "Vermutlich Wirtschaft",
+            "neededEquipment": ["Beamer", "Blackboard"]   
+        }],
+        "unavailable": ["Monday:1.Block"]
     },
     {
         "name": "Reusch",
@@ -317,7 +372,16 @@
             "professor": "Reusch",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "wpvs": [{
+            "name": "Livemix und Sounddesign",
+            "numberOfStudents": "12",
+            "dateAndTime": "Friday:6.Block",
+            "professor": "Reusch",
+            "description": "Vermutlich Wirtschaft",
+            "neededEquipment": ["Beamer", "Blackboard"]   
+        }],
+        "unavailable": ["Wednesday:4.Block", "Wednesday:4.Block"]
     },
     {
         "name": "Friess",
@@ -345,7 +409,8 @@
             "professor": "Friess",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "unavailable": ["Thursday:4.Block", "Thursday:5.Block"]
     },
     {
         "name": "Ruf",
@@ -365,7 +430,8 @@
             "professor": "Ruf",
             "description": "Kp",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "unavailable": []
     },
     {
         "name": "Schäfer",
@@ -377,6 +443,7 @@
             "professor": "Schäfer",
             "description": "Klang",
             "neededEquipment": ["Beamer", "Blackboard"]
-        }]
+        }],
+        "unavailable": ["Monday:1.Block", "Monday:2.Block", "Monday:3.Block", "Monday:4.Block", "Monday:5.Block"]
     }
 ]

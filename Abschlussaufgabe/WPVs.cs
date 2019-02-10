@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Abschlussaufgabe
 {
-    class Courses 
+    class WPVs
     {
         public string name;
-        public int semester;
         public int numberOfStudents;
-        public string[] coursesOfStudy;
+        public string dateAndTime;
         public string professor;
         public string description;
+        public Rooms assignedRoom;
         public string[] neededEquipment;
     
     }

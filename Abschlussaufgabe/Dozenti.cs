@@ -7,13 +7,8 @@ namespace Abschlussaufgabe
     {
         public string name;
         public Courses[] courses;
+        public WPVs[] wpvs;
         public string[] unavailable;
-        public Dozenti(Dozenti f){
-            
-            
-        }
-        public void print(){
-            Console.WriteLine(this.name);
-        }
+        
     }
 }
