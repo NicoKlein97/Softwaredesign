@@ -21,11 +21,11 @@ namespace Abschlussaufgabe
 
             bool runProgram = true;
 
+            Console.Clear();
             Console.WriteLine("Gooday Day, what would you like to do ?");
 
             while (runProgram == true)
             {
-                Console.Clear();
                 Console.WriteLine("You can choose between 4 kinds Timetables");
                 Console.WriteLine("1. Specific course of Study");
                 Console.WriteLine("2. All Courses");
@@ -38,6 +38,7 @@ namespace Abschlussaufgabe
                 switch (mode)
                 {
                     case "1":
+                        Console.Clear();
                         Console.WriteLine("Please, enter the name of the course of study you would like to see (MIB, OMB, MKB)");
                         string course = Console.ReadLine();
                         Console.WriteLine("Which Semester are you interested in ?");
@@ -47,26 +48,31 @@ namespace Abschlussaufgabe
                         break;
 
                     case "2":
+                        Console.Clear();
                         tableCourses.printAllCoursesTimetable(tableRooms);
                         break;
 
                     case "3":
+                        Console.Clear();
                         Console.WriteLine("Please, enter the name of the professor you are interested in");
                         string professorName = Console.ReadLine();
                         tableDozenti.printTimetable(professorName, tableCourses, tableRooms);
                         break;
 
                     case "4":
+                        Console.Clear();
                         Console.WriteLine("Please, enter the roomname you are interested in");
                         string roomname = Console.ReadLine();
                         tableRooms.printTimetable(roomname, tableCourses, tableDozenti);
                         break;
 
                     case "5":
+                        Console.Clear();
                         runProgram = false;
                         break;
 
                     default:
+                        Console.Clear();
                         Console.WriteLine("Please, enter a valid number");
                         break;
                 }
@@ -104,7 +110,6 @@ namespace Abschlussaufgabe
                     allRoomsObjects.Add(TBR[i]);
                 }
             }
-
         }
     }
 }

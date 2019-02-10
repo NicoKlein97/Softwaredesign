@@ -24,7 +24,7 @@ namespace Abschlussaufgabe
             days.Add("Friday", timesFriday);
 
             _iList = duplicateProfessorsAcordingToCourses(_iList);
-            insertObjectsInRandomTime(_iList);
+            insertDozentiInRandomTime(_iList);
         }
 
         public override void fillTimesDictionaries()
@@ -62,7 +62,7 @@ namespace Abschlussaufgabe
             return _iList;
         }
 
-        private void insertObjectsInRandomTime(List<Dozenti> _iList)
+        private void insertDozentiInRandomTime(List<Dozenti> _iList)
         {
             while (_iList.Count != 0)
             {
