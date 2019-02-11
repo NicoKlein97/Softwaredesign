@@ -9,7 +9,7 @@ namespace Abschlussaufgabe
     class Program
     {
         public static List<Dozenti> allDozentiObjects = new List<Dozenti>();
-        public static List<Courses> allCoursesObjects = new List<Courses>();
+        public static List<Courses> allRegularCourseObjects = new List<Courses>();
         public static List<Rooms> allRoomsObjects = new List<Rooms>();
         public static List<WPVs> allWPVObjects = new List<WPVs>();
         
@@ -19,13 +19,10 @@ namespace Abschlussaufgabe
 
             TimetableWPVs tableWPVs = new TimetableWPVs(allWPVObjects);
             TimetableDozenti tableDozenti = new TimetableDozenti(allDozentiObjects, tableWPVs);
-            TimetableCourses tableCourses = new TimetableCourses(allCoursesObjects, tableDozenti);
+            TimetableCourses tableCourses = new TimetableCourses(allRegularCourseObjects, tableDozenti);
             TimetableRooms tableRooms = new TimetableRooms(allRoomsObjects, tableCourses, tableWPVs);
             
-
             bool runProgram = true;
-
-            //Console.Clear();
             Console.WriteLine("Gooday Day, what would you like to do ?");
 
             while (runProgram == true)
@@ -67,8 +64,8 @@ namespace Abschlussaufgabe
                     case "4":
                         Console.Clear();
                         Console.WriteLine("Please, enter the roomname you are interested in");
-                        string roomname = Console.ReadLine();
-                        tableRooms.printTimetable(roomname, tableCourses, tableDozenti);
+                        string roomName = Console.ReadLine();
+                        tableRooms.printTimetable(roomName, tableCourses, tableDozenti);
                         break;
 
                     case "5":
@@ -89,40 +86,40 @@ namespace Abschlussaufgabe
             StreamReader readerCourses = new StreamReader("Courses.json");
             {
                 string json = readerCourses.ReadToEnd();
-                List<Courses> TBC = JsonConvert.DeserializeObject<List<Courses>>(json);
-                for (int i = 0; i < TBC.Count; i++)
+                List<Courses> deserializedCourses = JsonConvert.DeserializeObject<List<Courses>>(json);
+                for (int i = 0; i < deserializedCourses.Count; i++)
                 {
-                    allCoursesObjects.Add(TBC[i]);
+                    allRegularCourseObjects.Add(deserializedCourses[i]);
                 }
             }
 
             StreamReader readerDozenti = new StreamReader("Dozenti.json");
             {
                 string json = readerDozenti.ReadToEnd();
-                List<Dozenti> TBD = JsonConvert.DeserializeObject<List<Dozenti>>(json);
-                for (int i = 0; i < TBD.Count; i++)
+                List<Dozenti> deserializedDozenti = JsonConvert.DeserializeObject<List<Dozenti>>(json);
+                for (int i = 0; i < deserializedDozenti.Count; i++)
                 {
-                    allDozentiObjects.Add(TBD[i]);
+                    allDozentiObjects.Add(deserializedDozenti[i]);
                 }
             }
 
             StreamReader readerRooms = new StreamReader("Rooms.json");
             {
                 string json = readerRooms.ReadToEnd();
-                List<Rooms> TBR = JsonConvert.DeserializeObject<List<Rooms>>(json);
-                for (int i = 0; i < TBR.Count; i++)
+                List<Rooms> deserializedRooms = JsonConvert.DeserializeObject<List<Rooms>>(json);
+                for (int i = 0; i < deserializedRooms.Count; i++)
                 {
-                    allRoomsObjects.Add(TBR[i]);
+                    allRoomsObjects.Add(deserializedRooms[i]);
                 }
             }
 
             StreamReader readerWPVs = new StreamReader("WPVs.json");
             {
                 string json = readerWPVs.ReadToEnd();
-                List<WPVs> TBW = JsonConvert.DeserializeObject<List<WPVs>>(json);
-                for (int i = 0; i < TBW.Count; i++)
+                List<WPVs> deserializedWPVs = JsonConvert.DeserializeObject<List<WPVs>>(json);
+                for (int i = 0; i < deserializedWPVs.Count; i++)
                 {
-                    allWPVObjects.Add(TBW[i]);
+                    allWPVObjects.Add(deserializedWPVs[i]);
                 }
             }
         }

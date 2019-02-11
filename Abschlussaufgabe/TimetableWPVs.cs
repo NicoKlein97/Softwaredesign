@@ -5,31 +5,31 @@ namespace Abschlussaufgabe
 {
     class TimetableWPVs : Timetable
     {
-        public Dictionary<string, List<WPVs>> timesMonday = new Dictionary<string, List<WPVs>>();
-        public Dictionary<string, List<WPVs>> timesThuesday = new Dictionary<string, List<WPVs>>();
-        public Dictionary<string, List<WPVs>> timesWednesday = new Dictionary<string, List<WPVs>>();
-        public Dictionary<string, List<WPVs>> timesThursday = new Dictionary<string, List<WPVs>>();
-        public Dictionary<string, List<WPVs>> timesFriday = new Dictionary<string, List<WPVs>>();
+        public Dictionary<string, List<WPVs>> blocksOfMonday = new Dictionary<string, List<WPVs>>();
+        public Dictionary<string, List<WPVs>> blocksOfThuesday = new Dictionary<string, List<WPVs>>();
+        public Dictionary<string, List<WPVs>> blocksOfWednesday = new Dictionary<string, List<WPVs>>();
+        public Dictionary<string, List<WPVs>> blocksOfThursday = new Dictionary<string, List<WPVs>>();
+        public Dictionary<string, List<WPVs>> blocksOfFriday = new Dictionary<string, List<WPVs>>();
         public Dictionary<string, Dictionary<string, List<WPVs>>> days = new Dictionary<string, Dictionary<string, List<WPVs>>>();
 
         public TimetableWPVs(List<WPVs> _iList)
         {
 
-            fillTimesDictionaries();
+            fillDictionaries();
 
-            days.Add("Monday", timesMonday);
-            days.Add("Thuesday", timesThuesday);
-            days.Add("Wednesday", timesWednesday);
-            days.Add("Thursday", timesThursday);
-            days.Add("Friday", timesFriday);
+            days.Add("Monday", blocksOfMonday);
+            days.Add("Thuesday", blocksOfThuesday);
+            days.Add("Wednesday", blocksOfWednesday);
+            days.Add("Thursday", blocksOfThursday);
+            days.Add("Friday", blocksOfFriday);
 
             insertWPVsInTimetable(_iList);
 
         }
 
-        public override void fillTimesDictionaries()
+        public override void fillDictionaries()
         {
-            Dictionary<string, List<WPVs>>[] dayNames = { timesMonday, timesThuesday, timesWednesday, timesThursday, timesFriday };
+            Dictionary<string, List<WPVs>>[] dayNames = { blocksOfMonday, blocksOfThuesday, blocksOfWednesday, blocksOfThursday, blocksOfFriday };
 
             for (int i = 0; i < 5; i++)
             {
