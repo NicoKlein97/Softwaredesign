@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Gamedesign",
+        "numberOfStudents": "12",
+        "dateAndTime": "Thuesday:1.Block",
+        "professor": "Dell Oro",
+        "description": "VIDEOSPIELE",
+        "neededEquipment": ["Beamer", "Computer"]   
+    },
+    {
+        "name": "Spieleentwicklung",
+        "numberOfStudents": "12",
+        "dateAndTime": "Wednesday:1.Block",
+        "professor": "Dell Oro",
+        "description": "Videospiiieleee",
+        "neededEquipment": ["Beamer", "Computer"]   
+    },
+    {
+        "name": "Introduction to deep Learning",
+        "numberOfStudents": "12",
+        "dateAndTime": "Wednesday:3.Block",
+        "professor": "Lasowski",
+        "description": "Was auch immer das ist",
+        "neededEquipment": ["Beamer", "Blackboard"]   
+    },
+    {
+        "name": "Mediale Gegenkultur",
+        "numberOfStudents": "15",
+        "dateAndTime": "Friday:3.Block",
+        "professor": "Zydorek",
+        "description": "Vermutlich Wirtschaft",
+        "neededEquipment": ["Beamer", "Blackboard"]   
+    },
+    {
+        "name": "Fotografie",
+        "numberOfStudents": "10",
+        "dateAndTime": "Monday:1.Block",
+        "professor": "Fries",
+        "description": "Max Caulfield lässt grüßen",
+        "neededEquipment": ["Beamer", "Blackboard"]   
+    },
+    {
+        "name": "Livemix und Sounddesign",
+        "numberOfStudents": "12",
+        "dateAndTime": "Friday:6.Block",
+        "professor": "Reusch",
+        "description": "Vermutlich Wirtschaft",
+        "neededEquipment": ["Beamer", "Blackboard"]   
+    }
+]
